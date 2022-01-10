@@ -110,3 +110,15 @@ button:active{
         font-size: 2.5rem;
     }
 }
+
+form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+form container{
+    display: inline-block;
+    box-sizing: border-box;
+}

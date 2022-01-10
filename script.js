@@ -4,8 +4,30 @@ const authorText = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
+const form = document.getElementById('form');
 
 let apiQuotes = [];
+let userAuthenticated = false;
+
+function validateLogin (e){
+    e.preventDefault();
+    let username = document.getElementById('username');
+    let password = document.getElementById('password');
+
+    if(username.value === 'admin' && password.value === 'pass1'){
+        alert('login success');
+    } else{
+        alert('Sorry, you are not authenticated!');
+    }
+
+    let user = {
+        username: username.value,
+        password: password.value,
+    };
+
+    localStorage.setItem(user, JSON.stringify(user));
+    console.log('user added');
+}
 
 function loading(){
     loader.hidden = false;
@@ -55,5 +77,6 @@ function tweetQuote(){
 
 newQuoteBtn.addEventListener('click', newQuote);
 twitterBtn.addEventListener('click', tweetQuote);
+form.addEventListener('submit', validateLogin);
 
 getQuotes();
