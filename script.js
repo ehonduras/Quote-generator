@@ -14,14 +14,9 @@ function validateLogin (e){
     let username = document.getElementById('username');
     let password = document.getElementById('password');
 
-    if(username.value === '38761545933' && password.value === 'pass1'){
-        pe.setPerson({ phone: '38761545933'}, 2000 ).then(() => {
-            return pe.track('login');
-        });
-        alert('login success');
-    } else{
-        alert('Sorry, you are not authenticated!');
-    }
+    pe.setPerson({ phone: '38761545933'}, 2000 ).then(() => {
+        return pe.track('login');
+    });
 
     let user = {
         username: username.value,
