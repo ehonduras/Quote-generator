@@ -14,8 +14,8 @@ function validateLogin (e){
     let username = document.getElementById('username');
     let password = document.getElementById('password');
 
-    if(username.value === 'admin@email.com' && password.value === 'pass1'){
-        pe.setPerson({ email: username.value}, 2000 ).then(() => {
+    if(username.value === '38761545933' && password.value === 'pass1'){
+        pe.setPerson({ phone: '38761545933'}, 2000 ).then(() => {
             return pe.track('login');
         });
         alert('login success');
