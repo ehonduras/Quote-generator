@@ -14,7 +14,10 @@ function validateLogin (e){
     let username = document.getElementById('username');
     let password = document.getElementById('password');
 
-    if(username.value === 'admin' && password.value === 'pass1'){
+    if(username.value === 'admin@email.com' && password.value === 'pass1'){
+        pe.setPerson({ email: username.value}, 2000 ).then(() => {
+            return pe.track('login');
+        });
         alert('login success');
     } else{
         alert('Sorry, you are not authenticated!');

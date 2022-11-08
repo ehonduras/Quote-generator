@@ -15,7 +15,20 @@
         (window,document,'script','https://livechat.infobip.com/widget.js','liveChat');
         
         liveChat('init', '3d491bd5-1dc0-4f77-aaac-e691718f81d9');
-        </script>
+    </script>
+    <script>
+        (function(e,t,n,o){e.PeopleEventsObject=o;e[o]=e[o]||{init:function(t){e[o].apiKey=t},
+        setPerson:function(t,n){e[o].person=t;e[o].personTtl=n},
+        forgetPerson:function(){e[o].toForgetPerson=true},
+        track:function(){(e[o].q=e[o].q||[]).push(arguments)},
+        updatePerson:function(t){e[o].personToUpdate={person:t}},
+        appendToList:function(t,n){e[o].attributeToAppend={attributeName:t,attribute:n}}};
+        var r=t.createElement("script");
+        var s=t.getElementsByTagName("script")[0];r.async=1;r.src=n;s.parentNode.insertBefore(r,s)})
+        (window,document,'https://s3.eu-central-1.amazonaws.com/portal-cdn-production/people-events-sdk/pe.latest-2.js','pe');
+        
+        pe.init('b9ea82e74e2d9f059eab9b38a8195262-39fb553c-8bca-489b-841d-e4d6d299ef4a');
+    </script>
 </head>
 <body>
     <div class="quote-container" id="quote-container">
