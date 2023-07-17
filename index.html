@@ -5,32 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script>
-      (function(I,n,f,o,b,i,p){
-      I[b]=I[b]||function(){(I[b].q=I[b].q||[]).push(arguments)};
-      I[b].t=1*new Date();i=n.createElement(f);i.async=1;i.src=o;
-      p=n.getElementsByTagName(f)[0];p.parentNode.insertBefore(i,p)})
-      (window,document,'script','https://webpush.infobip.com/bundle-latest.js','infobipWebPush');
-    
-      infobipWebPush('init', {
-        applicationCode: '7a42a86bc793fa50c2e50196f619eef5-dfd1ee19-08c6-41aa-9107-fa1e91a471c6',
-        vapidPublicKey: 'BBdq7C2tFPYbx1wqCanjTZNf4svNL5qv6yHGTsNNjIqPlAJg2dW4shRKXLtoLKDdVL6UVMk3UOR95UFXnx0oBvs=',
-        optIn: {
-          autostart: true,
-        },
-      });
-    </script>
-
-  <script>
-    infobipWebPush("on", "init", function (sdk) {
-    sdk.saveCustomAttributes({
-    customStringAttribute: "testiranje",
-    customNumberAttribute: 42,
-    customBooleanFlag: true,
-  });
-});
-    </script>
-</script>
   </head>
   <body>
     <div class="quote-container" id="quote-container">
