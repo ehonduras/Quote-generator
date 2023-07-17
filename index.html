@@ -1,63 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Quote generator</title>
 
     <script>
-        (function(I,n,f,o,b,i,p){
-        I[b]=I[b]||function(){(I[b].q=I[b].q||[]).push(arguments)};
-        I[b].t=1*new Date();i=n.createElement(f);i.async=1;i.src=o;
-        p=n.getElementsByTagName(f)[0];p.parentNode.insertBefore(i,p)})
-        (window,document,'script','https://livechat.infobip.com/widget.js','liveChat');
-        
-        liveChat('init', '');
+      (function (e, t, n, o) {
+        e.PeopleEventsObject = o;
+        e[o] = e[o] || {
+          init: function (t) {
+            e[o].apiKey = t;
+          },
+          setPerson: function (t, n) {
+            e[o].person = t;
+            e[o].personTtl = n;
+          },
+          forgetPerson: function () {
+            e[o].toForgetPerson = true;
+          },
+          track: function () {
+            (e[o].q = e[o].q || []).push(arguments);
+          },
+          updatePerson: function (t) {
+            e[o].personToUpdate = { person: t };
+          },
+          appendToList: function (t, n) {
+            e[o].attributeToAppend = { attributeName: t, attribute: n };
+          },
+        };
+        var r = t.createElement("script");
+        var s = t.getElementsByTagName("script")[0];
+        r.async = 1;
+        r.src = n;
+        s.parentNode.insertBefore(r, s);
+      })(
+        window,
+        document,
+        "https://s3.eu-central-1.amazonaws.com/portal-cdn-production/people-events-sdk/pe.latest-2.js",
+        "pe"
+      );
+
+      pe.init("");
     </script>
     <script>
-        (function(e,t,n,o){e.PeopleEventsObject=o;e[o]=e[o]||{init:function(t){e[o].apiKey=t},
-        setPerson:function(t,n){e[o].person=t;e[o].personTtl=n},
-        forgetPerson:function(){e[o].toForgetPerson=true},
-        track:function(){(e[o].q=e[o].q||[]).push(arguments)},
-        updatePerson:function(t){e[o].personToUpdate={person:t}},
-        appendToList:function(t,n){e[o].attributeToAppend={attributeName:t,attribute:n}}};
-        var r=t.createElement("script");
-        var s=t.getElementsByTagName("script")[0];r.async=1;r.src=n;s.parentNode.insertBefore(r,s)})
-        (window,document,'https://s3.eu-central-1.amazonaws.com/portal-cdn-production/people-events-sdk/pe.latest-2.js','pe');
-        
-        pe.init('');
+      (function(I,n,f,o,b,i,p){
+      I[b]=I[b]||function(){(I[b].q=I[b].q||[]).push(arguments)};
+      I[b].t=1*new Date();i=n.createElement(f);i.async=1;i.src=o;
+      p=n.getElementsByTagName(f)[0];p.parentNode.insertBefore(i,p)})
+      (window,document,'script','https://webpush.infobip.com/bundle-latest.js','infobipWebPush');
+    
+      infobipWebPush('init', {
+        applicationCode: 'c761301f91c073799ed7b6f2491489c8-1fcb9713-ec74-48ca-b577-3f49464c1aa7',
+        vapidPublicKey: 'BDm0Mv3nPBnzq06o58sXHdbVU3g78xBq9Nf2urS2c1Lhmn5medBfGqx762tvBw2DYFvTBwHinaYGvW2sN52UucY=',
+        optIn: {
+          autostart: true,
+        },
+      });
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="quote-container" id="quote-container">
-        <div class="quote-text"><span id="quote"></span>
-        </div>
-        <div class="quote-author">
-            <span id="author"></span>
-        </div>
-        <div class="button-container">
-            <button class="twitter-button" id="twitter" title="Tweet This!"></button>
-            <button id="new-quote">
-                New Quote
-            </button>
-        </div>
+      <div class="quote-text"><span id="quote"></span></div>
+      <div class="quote-author">
+        <span id="author"></span>
+      </div>
+      <div class="button-container">
+        <button
+          class="twitter-button"
+          id="twitter"
+          title="Tweet This!"
+        ></button>
+        <button id="new-quote">New Quote</button>
+      </div>
     </div>
 
     <div class="loader" id="loader"></div>
 
-    <form id="form">      
-        <div class="container">
-          <input type="text" placeholder="Enter Username" name="uname" id="username" required>
-      
-          <input type="password" placeholder="Enter Password" name="psw" id="password" required>
-      
-          <button type="submit" id="login-btn">Login</button>
-        
-        </div>
-      </form>
-    
+    <form id="form">
+      <div class="container">
+        <input
+          type="text"
+          placeholder="Enter Username"
+          name="uname"
+          id="username"
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          id="password"
+          required
+        />
+
+        <button type="submit" id="login-btn">Login</button>
+      </div>
+    </form>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

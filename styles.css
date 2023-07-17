@@ -18,6 +18,16 @@ body{
     justify-content: center;
 }
 
+.ib-widget-wrapper{
+    border: 5px solid red;
+}
+
+#ib-button-messaging{
+    /* position: absolute; */
+    margin-bottom: 100px;
+    /* desired css styling */
+}
+
 .quote-container{
     width: auto;
     max-width: 900px;
