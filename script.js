@@ -73,14 +73,14 @@ function tweetQuote() {
   window.open(twitterUrl, "_blank");
 }
 
-infobipWebPush('on', "init", function (perimssion) {
-    if (permission === 'default') {
-        console.log('default');
-    } else if (permission === 'granted') {
-        console.log('granted');
-    } else if (permission === 'denied') {
-        console.log('denied');
-    }
+infobipWebPush("on", "init", function (permission) {
+  if (permission === "default") {
+    console.log("default");
+  } else if (permission === "granted") {
+    console.log("granted");
+  } else if (permission === "denied") {
+    console.log("denied");
+  }
 });
 
 newQuoteBtn.addEventListener("click", newQuote);
