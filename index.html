@@ -20,6 +20,16 @@
         },
       });
     </script>
+
+  <script>
+    infobipWebPush("on", "init", function (sdk) {
+    sdk.saveCustomAttributes({
+    customStringAttribute: "testiranje",
+    customNumberAttribute: 42,
+    customBooleanFlag: true,
+  });
+});
+    </script>
 </script>
   </head>
   <body>

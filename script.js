@@ -73,19 +73,7 @@ function tweetQuote() {
   window.open(twitterUrl, "_blank");
 }
 
-infobipWebPush("init", {
-  applicationCode: "applicationCode",
-  vapidPublicKey: "vapidPublicKey from Infobip portal",
-  safariWebsitePushId: "safariWebsitePushId from apple Developer portal",
-});
 
-infobipWebPush("on", "init", function (sdk) {
-  sdk.saveCustomAttributes({
-    customStringAttribute: "testiranje",
-    customNumberAttribute: 42,
-    customBooleanFlag: true,
-  });
-});
 
 newQuoteBtn.addEventListener("click", newQuote);
 twitterBtn.addEventListener("click", tweetQuote);
